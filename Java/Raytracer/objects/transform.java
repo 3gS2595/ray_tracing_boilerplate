@@ -1,5 +1,4 @@
-//DYLAN TRINKNER
-//dbtrinkner@gmail.com
+package Raytracer.objects;
 
 import java.io.*;
 import java.text.DecimalFormat;

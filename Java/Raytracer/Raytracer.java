@@ -1,5 +1,9 @@
-//DYLAN TRINKNER
+package Raytracer;//DYLAN TRINKNER
 //dbtrinkner@gmail.com
+
+import Raytracer.objects.intake;
+import Raytracer.objects.light;
+import Raytracer.objects.material;
 
 import java.io.FileWriter;
 import java.io.IOException;

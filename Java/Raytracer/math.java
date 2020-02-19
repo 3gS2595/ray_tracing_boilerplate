@@ -1,3 +1,5 @@
+package Raytracer;
+
 class math {
 
     static double[] unit(double[] a){

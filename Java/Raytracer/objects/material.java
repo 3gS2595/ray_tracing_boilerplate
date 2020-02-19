@@ -1,3 +1,5 @@
+package Raytracer.objects;
+
 public class material {
     public double[] ka; // ambient
     public double[] kd; // diffuse

@@ -1,9 +1,17 @@
+package Raytracer.objects;
+
+import Raytracer.cam;
+import Raytracer.objects.globe;
+import Raytracer.objects.light;
+import Raytracer.objects.material;
+import Raytracer.objects.model;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-class intake {
-    static void init(String driverName, cam c) throws IOException {
+public class intake {
+    public static void init(String driverName, cam c) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(driverName));
         String line;
         int modelID = 0;

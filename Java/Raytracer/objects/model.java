@@ -1,3 +1,5 @@
+package Raytracer.objects;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -54,7 +56,7 @@ public class model implements object {
 								break;
 							case "v":
 								model.v.add(new double[]{num[1], num[2], num[3], matkey[0]});
-								model.map.put(new double[]{num[1], num[2], num[3], matkey[0]}, null);
+								map.put(new double[]{num[1], num[2], num[3], matkey[0]}, null);
 								break;
 							case "f":
 								int[] one = new int[]{Integer.parseInt(raw[1].split("//")[0]),
@@ -66,7 +68,7 @@ public class model implements object {
 									model.v.get(one[1]).clone(),
 									model.v.get(one[2]).clone(),
 									matkey.clone()};
-								model.comp.add(temps);
+								comp.add(temps);
 
 //								ArrayList<double[][]> te = model.map.get(model.v.get(one[0]).clone());
 //								te.add(temps);

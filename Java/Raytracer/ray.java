@@ -1,3 +1,9 @@
+package Raytracer;
+
+import Raytracer.objects.globe;
+import Raytracer.objects.material;
+import Raytracer.objects.model;
+import Raytracer.objects.object;
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.apache.commons.math3.linear.DecompositionSolver;
 import org.apache.commons.math3.linear.LUDecomposition;
@@ -64,38 +70,6 @@ class ray {
 			double[] B = vert[1];
 			double[] C = vert[2];
 
-//			int cnt = 0;
-//			for (double[][] h : model.map.get((int)vert[3][1])) {
-//				A[0] = h[0][0];
-//				A[1] = h[0][1];
-//				A[2] = h[0][2];
-//
-//				B[0] = h[1][0];
-//				B[1] = h[1][1];
-//				B[2] = h[1][2];
-//
-//				C[0] = h[2][0];
-//				C[1] = h[2][1];
-//				C[2] = h[2][2];
-//				cnt ++;
-//			}
-//
-////			for (double[] a : cur.map.get((int)vert[4][0])){
-////				System.out.println(a.length + " " + a[0] + " " + a[1] + " " + a[2]);
-////
-//
-////			}
-////
-//			for(int i = 0; i < 3; i++){
-//				A[i] = A[i] /cnt;
-//				B[i] = B[i] /cnt;
-//				C[i] = C[i] /cnt;
-//			}
-//			A = math.unit(A);
-//			B = math.unit(B);
-//			C = math.unit(C);
-
-
 			double[] Y = {A[0] - self.L[0], A[1] - self.L[1], A[2] - self.L[2]};
 			double[][] M = new double[][]{new double[]{A[0] - B[0], A[0] - C[0], self.D[0]},
 				new double[]{A[1] - B[1], A[1] - C[1], self.D[1]},
@@ -110,7 +84,7 @@ class ray {
 				double[] best = math.add(math.add(A, math.mult(math.sub(B, A), pt[0])), math.mult(math.sub(C, A), pt[1]));
 
 
-				// SHADOW (checks if light source is between objects)
+				// SHADOW (checks if light source is between Raytracer.objects)
 				double d2l = Double.MAX_VALUE;
 				if (shdw)
 					d2l = Math.sqrt(Math.pow(self.best_pt[0] - ltp[0], 2)
@@ -144,7 +118,7 @@ class ray {
 		if (disc > 0) {
 			double t = v - Math.sqrt(disc);
 
-			// SHADOW (checks if light source is between objects)
+			// SHADOW (checks if light source is between Raytracer.objects)
 			double d2l = Double.MAX_VALUE;
 			if (shdw)
 				d2l = Math.sqrt(Math.pow(self.best_pt[0] - ltp[0], 2)

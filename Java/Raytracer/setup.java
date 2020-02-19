@@ -1,3 +1,8 @@
+package Raytracer;
+
+import Raytracer.objects.model;
+import Raytracer.objects.object;
+
 class setup {
     static void init(cam c){
         c.eye    = c.cam.get("eye");

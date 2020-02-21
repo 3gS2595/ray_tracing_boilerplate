@@ -1,0 +1,13 @@
+eye 100.0 40.0 100.0
+look 0.0 0.0 0.0
+up 0.0 1.0 0.0
+d -40.0
+bounds -20 20 -20 20
+res 50 50
+recursionlevel 2
+ambient 0.2 0.2 0.2
+light 300 300 300 1 0.5 0.5 0.5
+model 1.0 0.0 0.0 -90 9 32 68 42 90 sphere1.obj
+model 0.0 1.0 0.0 275 29 22 -35 0 45 cow.obj
+
+

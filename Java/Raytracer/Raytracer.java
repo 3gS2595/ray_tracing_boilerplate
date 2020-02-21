@@ -1,5 +1,4 @@
-package Raytracer;//DYLAN TRINKNER
-//dbtrinkner@gmail.com
+package Raytracer;
 
 import Raytracer.objects.intake;
 import Raytracer.objects.light;

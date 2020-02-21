@@ -31,22 +31,25 @@ public class intake {
                     case "ambient"        : c.amb   =      new double[]{num[1], num[2], num[3]          };break;
 					case "recursionlevel" : c.depth =              (int)num[1]                           ;break;
 					case  "sphere" :
-                                    globe globe  = new globe();
-                                    material mater  = new material();
-                                    globe.center = new double[]{num[1], num[2], num[3]  };
-                                    globe.radius =              num[4]                   ;
-                                    mater.ka     = new double[]{num[5], num[6], num[7]  };
-                                    mater.kd     = new double[]{num[8], num[9], num[10] };
-                                    mater.ks     = new double[]{num[11],num[12],num[13] };
-                                    mater.kr     = new double[]{num[14],num[15],num[16] };
-                                    if(num.length == 18) mater.ni     = num[17];
-                                    mater.alpha = 16;
-                                    if (mater.ni != 0){
-                                        mater.tr = new double[]{1-mater.kr[0], 1-mater.kr[1], 1-mater.kr[2]};
-                                    } else {
-                                        mater.tr = new double[]{0, 0, 0};
-                                    }
-                                    globe.material = mater;
+                                    globe globe   = new globe();
+                                    material mtrl = new material();
+
+                                    //direct data intake
+                                    globe.center  = new double[]{num[1], num[2], num[3]  };
+                                    globe.radius  = num[4]                   ;
+                                    mtrl.ka       = new double[]{num[5], num[6], num[7]  };
+                                    mtrl.kd       = new double[]{num[8], num[9], num[10] };
+                                    mtrl.ks       = new double[]{num[11],num[12],num[13] };
+                                    mtrl.kr       = new double[]{num[14],num[15],num[16] };
+
+                                    //indirect data intake
+                                    mtrl.alpha    = 16;
+                                    if (mtrl.ni  != 0){
+                                        mtrl.tr = new double[]{1-mtrl.kr[0], 1-mtrl.kr[1], 1-mtrl.kr[2]};
+                                    } else { mtrl.tr = new double[]{0, 0, 0}; }
+
+                                    //completes globe object and places into list of objects
+                                    globe.material = mtrl;
                                     c.objs.add(globe);
                                     break;
                     case   "light" :
@@ -56,9 +59,8 @@ public class intake {
                                     c.lights.add(l);
                                     break;
                     case  "model" :
-                                    model model    = new model();
+                                    model model   = new model();
                                     model.id      = modelID;
-                                    model.str     = line;
                                     if(num.length == 11){
                                         model.fileOBJ = raw[10];
                                         model.d = num[9];

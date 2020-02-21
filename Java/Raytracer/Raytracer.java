@@ -77,25 +77,12 @@ public class Raytracer {
 				}
 			}
 			for (int i = 0; i < 3; i++) { accum[i] = accum[i] + (refatt[i] * color[i]); }
-
 			if (level > 0) {
 				double[] flec = new double[]{0.0, 0.0, 0.0};
 				double[] Uinv = math.mult(r.D, -1);
 				double[] refR = math.unit(math.sub(math.mult(N, 2 * math.dot(N, Uinv)), Uinv));
 				ray_trace(c, new ray(r.best_pt, refR), flec, math.pair(mat.kr, refatt), (level - 1));
 				for (int i = 0; i < 3; i++) { accum[i] = accum[i] + refatt[i] * flec[i]; }
-			}
-			if (level > 0 && r.best_sph != null && mat.ni != 0) {
-				double sum = mat.sum();
-				if (sum < 3 && sum != 0 && mat.ni != 0) {
-					double[] thru = new double[]{0.0, 0.0, 0.0};
-					ray fraR = ray.refract_exit(r, math.mult(r.D, -1), r.best_pt, mat.ni, 1.0);
-					if (fraR != null) {
-						ray_trace(c, fraR, thru, math.pair(mat.tr, refatt), level - 1);
-						r.flag = 1;
-						for (int i = 0; i < 3; i++) { accum[i] = accum[i] + refatt[i] * ((1 - mat.tr[i]) * thru[i]); }
-					}
-				}
 			}
 		}
 	}

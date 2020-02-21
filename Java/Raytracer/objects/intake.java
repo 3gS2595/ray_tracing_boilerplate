@@ -1,10 +1,6 @@
 package Raytracer.objects;
 
 import Raytracer.cam;
-import Raytracer.objects.globe;
-import Raytracer.objects.light;
-import Raytracer.objects.material;
-import Raytracer.objects.model;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

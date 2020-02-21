@@ -4,7 +4,6 @@ import java.io.*;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-
 class transform {
 	// Contains all models requested by driver
 	private ArrayList<model> models = new ArrayList<>();

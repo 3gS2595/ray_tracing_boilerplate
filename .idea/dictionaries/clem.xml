@@ -2,10 +2,20 @@
   <dictionary name="clem">
     <words>
       <w>flec</w>
+      <w>illum</w>
+      <w>jname</w>
+      <w>lname</w>
+      <w>mtllib</w>
       <w>mtrl</w>
+      <w>newmtl</w>
+      <w>polys</w>
+      <w>recursionlevel</w>
+      <w>shdw</w>
       <w>uinv</w>
       <w>umax</w>
       <w>umin</w>
+      <w>usemtl</w>
+      <w>verts</w>
       <w>vmax</w>
       <w>vmin</w>
     </words>

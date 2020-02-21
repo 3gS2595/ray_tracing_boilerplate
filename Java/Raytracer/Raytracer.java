@@ -66,7 +66,7 @@ public class Raytracer {
 					if (!shadow) {
 						color = math.add(color, math.mult(math.pair(mat.kd, lt.e), NdotL));
 
-						double[] toC = math.unit(math.sub(r.L, r.best_pt));
+						double[] toC = math.unit(math.sub(r.rPos, r.best_pt));
 						double[] spR = math.unit(math.sub(math.mult(N, 2 * NdotL), toL));
 						double CdR = math.dot(toC, spR);
 						if (CdR > 0.0) {
@@ -75,10 +75,13 @@ public class Raytracer {
 					}
 				}
 			}
+
+			// adds ambient light pair wised with ka (how much ambient light is reflected)
 			for (int i = 0; i < 3; i++) { accum[i] = accum[i] + (refatt[i] * color[i]); }
+
 			if (level > 0) {
 				double[] flec = new double[]{0.0, 0.0, 0.0};
-				double[] Uinv = math.mult(r.D, -1);
+				double[] Uinv = math.mult(r.rDir, -1);
 				double[] refR = math.unit(math.sub(math.mult(N, 2 * math.dot(N, Uinv)), Uinv));
 				ray_trace(c, new ray(r.best_pt, refR), flec, math.pair(mat.kr, refatt), (level - 1));
 				for (int i = 0; i < 3; i++) { accum[i] = accum[i] + refatt[i] * flec[i]; }

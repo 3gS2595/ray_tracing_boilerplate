@@ -16,7 +16,7 @@ public class intake {
             double[] num = new double[raw.length];
             if (!raw[0].equals("#")){
 
-                //converts strings into doubles and intakes to cam components.object
+                //converts strings into doubles and intakes to cam object
                 for (int i = 1; i < raw.length; i++) {
                     try { num[i] = Double.parseDouble(raw[i]);
                     } catch (Exception ignored) {}
@@ -61,10 +61,11 @@ public class intake {
                     case  "model" :
                                     model model   = new model();
                                     model.id      = modelID;
+
                                     if(num.length == 11){
-                                        model.fileOBJ = raw[10];
-                                        model.d = num[9];
-                                    } else model.fileOBJ = raw[9];
+                                        model.OBJname = raw[10];
+                                    } else model.OBJname = raw[9];
+
                                     transform.trans(line, (model.id + ""));
                                     c.objs.add(model);
                                     modelID++;

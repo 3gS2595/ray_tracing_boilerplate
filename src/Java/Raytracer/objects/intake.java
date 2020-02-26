@@ -28,7 +28,7 @@ public class intake {
                     case "bounds" : c.cam.put( "bnds", new double[]{num[1], num[2], num[3], num[4] });break;
                     case "res"    : c.cam.put( "resl", new double[]{num[1], num[2]                 });break;
                     case "d"      : c.cam.put( "nefa", new double[]{num[1]                         });break;
-                    case "ambient" : c.amb   =          new double[]{num[1], num[2], num[3]         };break;
+                    case "ambient" : c.amb   =         new double[]{num[1], num[2], num[3]          };break;
 		    case "recursionlevel" : c.depth =           (int)num[1]                          ;break;
 		    case "sphere"  :
 				    globe globe   = new globe();

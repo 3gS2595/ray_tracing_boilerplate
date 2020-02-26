@@ -35,12 +35,12 @@ public class intake {
                                     material mtrl = new material();
 
                                     //direct data intake
-                                    globe.center = new double[]{num[1], num[2], num[3]  };
-                                    globe.radius = num[4]                   ;
-                                    mtrl.ka      = new double[]{num[5], num[6], num[7]  };
-                                    mtrl.kd      = new double[]{num[8], num[9], num[10] };
-                                    mtrl.ks      = new double[]{num[11],num[12],num[13] };
-                                    mtrl.kr      = new double[]{num[14],num[15],num[16] };
+                                    globe.center = new double[]{num[1], num[2], num[3] };
+                                    globe.radius =              num[4];
+                                    mtrl.ka      = new double[]{num[5], num[6], num[7] };
+                                    mtrl.kd      = new double[]{num[8], num[9], num[10]};
+                                    mtrl.ks      = new double[]{num[11],num[12],num[13]};
+                                    mtrl.kr      = new double[]{num[14],num[15],num[16]};
 
                                     //indirect data intake
                                     mtrl.alpha   = 16;

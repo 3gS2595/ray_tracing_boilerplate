@@ -23,15 +23,15 @@ public class intake {
                 }
                 switch(raw[0]) {
                     case     "eye" : c.cam.put( "eye" , new double[]{num[1], num[2], num[3]         });break;
-					case    "look" : c.cam.put( "look", new double[]{num[1], num[2], num[3]         });break;
+		    case    "look" : c.cam.put( "look", new double[]{num[1], num[2], num[3]         });break;
                     case      "up" : c.cam.put( "up"  , new double[]{num[1], num[2], num[3]         });break;
                     case  "bounds" : c.cam.put( "bnds", new double[]{num[1], num[2], num[3], num[4] });break;
                     case     "res" : c.cam.put( "resl", new double[]{num[1], num[2]                 });break;
                     case       "d" : c.cam.put( "nefa", new double[]{num[1]                         });break;
-                    case "ambient"        : c.amb   =      new double[]{num[1], num[2], num[3]          };break;
-					case "recursionlevel" : c.depth =              (int)num[1]                           ;break;
-					case  "sphere" :
-                                    globe globe   = new globe();
+                    case "ambient" : c.amb   =          new double[]{num[1], num[2], num[3]          };break;
+		    case "recursionlevel" : c.depth =           (int)num[1]                           ;break;
+		    case "sphere"  :
+				    globe globe   = new globe();
                                     material mtrl = new material();
 
                                     //direct data intake

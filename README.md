@@ -3,6 +3,4 @@ Renders either an image or animation of a 3D scene, accounts for lights and came
 positioning, 3D models (.obj and .mtl filetype support) and spheres. Program supports geometric
 modeling, illumination, shadow, reflectance, and materiality. outputs images in ppm. and .gif.
 
-![Ray tracer animation example](https://i.imgur.com/gwFEhYF.gifv)
-
-
+![grab-landing-page](https://i.imgur.com/gwFEhYF.gif)

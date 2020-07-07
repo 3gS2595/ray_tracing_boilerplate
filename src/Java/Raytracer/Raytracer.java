@@ -48,8 +48,8 @@ public class Raytracer {
 	}
 
 	// recursive function tracing rays based on direction vectors
-	// recursive call when the vector hits an object, the new ray's
-	// vector responds to the incoming vectors impact angle 
+	// recursive call when the vector hits an object, with a new ray
+	// with a new vector in response to the previous impact angle
 	private static void ray_trace(cam c, ray r, double[] accum, double[] refatt, int level) {
 		if (ray.ray_find(r, c)) {
 			material mat = r.best_mat;
@@ -61,8 +61,6 @@ public class Raytracer {
 				double NdotL = math.dot(N, toL);
 
 				// "Do not eat the light"
-				// "you will start subtracting the light"
-				// "this will make terrance dimmer"
 				// this accomplishes shadows, never subtracting from the rays accumulating light
 				boolean shadow = ray.shdw_find(new ray(r.best_pt, math.unit(math.sub(lt.p, r.best_pt))), c, lt.p);
 				if (NdotL > 0.0) {

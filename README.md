@@ -4,3 +4,5 @@ positioning, 3D models (.obj and .mtl filetype support) and spheres. Program sup
 modeling, illumination, shadow, reflectance, and materiality. outputs images in ppm. and .gif.
 
 implemented entirely from the ground up in lenear algebra operations, calculating the color values of each pixel as the vector(ray) bounces around the scene
+
+main method: src/java/Raytracer/Raytracer.java

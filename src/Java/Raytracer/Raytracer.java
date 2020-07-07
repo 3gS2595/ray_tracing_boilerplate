@@ -61,7 +61,7 @@ public class Raytracer {
 				double NdotL = math.dot(N, toL);
 
 				// "Do not eat the light"
-				// this accomplishes shadows, never subtracting from the rays accumulating light
+				// accomplishes shadows, never subtracting from the rays accumulating light
 				boolean shadow = ray.shdw_find(new ray(r.best_pt, math.unit(math.sub(lt.p, r.best_pt))), c, lt.p);
 				if (NdotL > 0.0) {
 					if (!shadow) {

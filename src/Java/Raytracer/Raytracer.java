@@ -47,7 +47,7 @@ public class Raytracer {
 		}
 	}
 
-	// this method recursivly traces rays
+	// recursive function tracing rays based on direction vectors
 	// recursive call when the vector hits an object, the new ray's
 	// vector responds to the incoming vectors impact angle 
 	private static void ray_trace(cam c, ray r, double[] accum, double[] refatt, int level) {

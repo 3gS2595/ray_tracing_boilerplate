@@ -1,5 +1,5 @@
 ## 3D Ray Tracer
-Renders image or animation of 3D scene, accounts for lights, camera positioning, 3D models, and spheres. 
+Renders image or animation of 3D scene, accounts for lights, camera positioning, 3D models, spheres,
 geometric models, illumination, shadow, reflectance, and materiality. outputs images in ppm. and .gif.
 
 implemented entirely from the ground up through lenear algebra operations, calculating pixel color values through ray casting and subsequent ray reflection within the scene
